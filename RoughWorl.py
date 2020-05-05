@@ -39,8 +39,16 @@ for i in progressbar.progressbar(range(100)):
 
     if __name__ == '__main__':
         u2f = url_to_file(url, filename)
-        u2f.download()"""
+        u2f.download()
 
 length = 5
 guessed = length*["_"]
-print(guessed)
+print(guessed)"""
+import requests
+from bs4 import BeautifulSoup
+
+url = "http://www.nytimes.com/"
+r_html = requests.get(url).text
+soup = BeautifulSoup(r_html, 'html.parser')
+
+print(soup.prettify())
